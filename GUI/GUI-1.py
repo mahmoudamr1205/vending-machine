@@ -1,4 +1,4 @@
-from guizero import App, Text, TextBox, PushButton, Slider, Picture
+from guizero import App, Text, TextBox, PushButton, Slider, Picture, Window
 
 import tkinter as tk
 
@@ -25,10 +25,22 @@ def select_10():
     return 
 
 
+def open_window():
+    window.show()
+
+def close_window():
+    window.hide()
+
+
 
     
 app = App(title="مترو")
 #app = App(layout="grid")
+
+
+window = Window(app, title="Map")
+window.hide()
+
 
 
 maintext = Text(app, text="نوع التذكره"
@@ -36,13 +48,19 @@ maintext = Text(app, text="نوع التذكره"
                        ,font="Times new roman"
                        ,color="red")
 
+open_button = PushButton(app, command=open_window ,pady=50, padx=100 , text="Show Map")
 
-x_3= PushButton(app,command=select_3 ,pady=40, padx=40,text=" 3 جنيه",align="left")
-x_5 = PushButton(app,command=select_5 ,pady=40,padx=40,text=" 5 جنيه",align="left")
-x_7 = PushButton(app,command=select_7 ,pady=40,padx=40,text=" 7 جنيه",align="left")
-x_10= PushButton(app,command=select_10 ,pady=40, padx=40,text="10 جنيه",align="left")
+x_3= PushButton(app,command=select_3 ,pady=50, padx=100,text=" 3 جنيه",align="left")
+x_5 = PushButton(app,command=select_5 ,pady=50,padx=100,text=" 5 جنيه",align="left")
+x_7 = PushButton(app,command=select_7 ,pady=50,padx=100,text=" 7 جنيه",align="left")
+x_10= PushButton(app,command=select_10 ,pady=50, padx=100,text="10 جنيه",align="left")
 
-picture = Picture(app,  width=700, height=950, image="map.png",align="right")
+close_button = PushButton(window, command=close_window ,pady=50, padx=100, text="Choose ticket" ,align="left")
+
+picture = Picture(window,  width=700, height=950, image="map.png",align="right")
+
+
+
 
 
 app.display()
