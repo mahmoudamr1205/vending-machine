@@ -27,6 +27,7 @@ def select_3():
             time.sleep(0.1)
           #  arduino.open()
             arduino.write(b'3')
+            time.sleep(0.5) 
             x= arduino.read()
             print(x)
             if x == b't':os.system('notepad /p 3.txt')
@@ -40,6 +41,7 @@ def select_5():
         if flag5 == 0 :
             time.sleep(0.1) 
             arduino.write(b'5')
+            time.sleep(1) 
             x= arduino.read()
             print(x)
             if x == b'f':os.system('notepad /p 5.txt')
@@ -54,7 +56,7 @@ def select_7():
         if flag7 == 0 :
             time.sleep(0.1) 
             arduino.write(b'7')
-            time.sleep(2) 
+            time.sleep(2.2) 
             x= arduino.read()
             print(x)
             if x == b's':os.system('notepad /p 7.txt')
@@ -69,6 +71,7 @@ def select_10():
         if flag10 == 0 :
             time.sleep(0.1) 
             arduino.write(b'9')
+            time.sleep(2.5) 
             x= arduino.read()
             print(x)
             if x == b'n':os.system('notepad /p ten.txt')
